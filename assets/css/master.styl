@@ -1,0 +1,67 @@
+@import '_settings'
+
+normalize-css()
+border-box-html()
+base()
+
+v-height()
+  @media(min-height: 750px)
+    {block}
+v-h-small()
+  @media(max-height: 750px)
+    {block}
+
+html, body
+  height 100%
+  +v-h-small()
+    height auto
+
+html
+  +mobile()
+    fs 14px
+
+body
+  padding 0.5rem
+  font-weight 300
+  background-color #EBEAEA
+  background url(../img/bg.png)
+  background-size cover
+  background-position center
+
+
+.content
+  max-width 860px
+  margin 0 auto
+
+#homepage
+  text-align center
+  position relative
+  height 100%
+  > *
+    +v-height()
+      position absolute
+  #main-content
+    +v-height()
+      top 50%
+      transform translateY(-50%)
+
+    img //assume is logo
+      max-height 15rem
+    #tagline
+      font-size 1.25rem
+
+  #work-with-us
+    bottom 1rem
+    width 100%
+
+a
+  link(font-color)
+  font-weight bold
+  font-size 1.1em
+
+h1.company-name
+  font-size 3.3rem
+  font-weight 700
+  margin 0
+  text-transform uppercase
+  letter-spacing 0.1em
